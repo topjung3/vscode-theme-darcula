@@ -22,7 +22,9 @@
     "editorSuggestWidget.selectedBackground": "#204182cc",
     "badge.background": "#ffffff1a",
     "activityBar.background": "#ffffff1a",
-    "activityBarBadge.background": "#007acc"
+    "activityBarBadge.background": "#007acc",
+    "widget.shadow": "#00000000",
+    "scrollbar.shadow": "#00000000"
   },
   "tokenColors": [
     {

@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# Get script directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 # Get extension info from package.json
-EXT_NAME="vscode-theme-darcula-heesu"
-EXT_VERSION="0.0.1"
+EXT_NAME=$(node -p "require('$SCRIPT_DIR/package.json').name")
+EXT_VERSION=$(node -p "require('$SCRIPT_DIR/package.json').version")
 EXT_DIR="${EXT_NAME}-${EXT_VERSION}"
 
 # Check if VS Code is installed
@@ -29,7 +32,6 @@ echo "Installing to: $TARGET_DIR"
 mkdir -p "$TARGET_DIR"
 
 # Copy extension files
-SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cp -r "$SCRIPT_DIR/package.json" "$SCRIPT_DIR/themes" "$SCRIPT_DIR/icon.png" "$TARGET_DIR/"
 
 echo "Installation complete!"
